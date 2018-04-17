@@ -44,13 +44,13 @@ The program structure is as follow:
 
 At the moment, this bot only able to pull the JSON files from the website and calculate the best arbitraging opportunities.
 
-To add the functionality of auto trading, you would need to look at the main file in /src/main/java/com/natri/core/bot/BtceBFBot.java 
+To add the functionality of auto trading, you would need to look at the main file in ``` /src/main/java/com/natri/core/bot/BtceBFBot.java ```
 
-BtceBFBot.java is the file u need to implement your trading strategy and code it inside. 
+```BtceBFBot.java ``` is the file u need to implement your trading strategy and code it inside. 
 
-For the changing of JSON pulling structure, go to src/main/java/com/natri/data/btce/BtceQuotePuller.java 
+For the changing of JSON pulling structure, go to ```src/main/java/com/natri/data/btce/BtceQuotePuller.java ```
 
-In BtceQuotePuller.java you need to change the code in getData(). Other than that, you would have to change the web url address in BtceBFBot.java.
+In ```BtceQuotePuller.java ```you need to change the code in ```getData()```. Other than that, you would have to change the web url address in BtceBFBot.java.
 
 
 ## Authors
