@@ -50,7 +50,7 @@ To add the functionality of auto trading, you would need to look at the main fil
 
 For the changing of JSON pulling structure, go to ```src/main/java/com/natri/data/btce/BtceQuotePuller.java ```
 
-In ```BtceQuotePuller.java ```you need to change the code in ```getData()```. Other than that, you would have to change the web url address in BtceBFBot.java.
+In ```BtceQuotePuller.java ```you need to change the code in ```getData()```. Other than that, you would have to change the web url address in ```BtceBFBot.java```.
 
 
 ## Authors
