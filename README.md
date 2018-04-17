@@ -8,7 +8,7 @@ This instructions give you how to set-up the environment in your system.
 
 ### Prerequisites
 
-You will need django installed in your system.
+You will need Maven installed in your system.
 
 
 ```
