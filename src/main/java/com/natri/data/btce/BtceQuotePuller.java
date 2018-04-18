@@ -74,12 +74,12 @@ public class BtceQuotePuller implements IQuotePuller {
 		logger.debug("Pulling URL: " + masterPairUrl);
 
 		JSONObject obj = getJsonFromURL(masterPairUrl);
-		JSONArray res = obj.optJSONArray("result");
+		JSONArray res = obj.optJSONArray("0");
 
 		for(int index = 0; index < res.length(); index++)
 		{
 			JSONObject quoteData = res.getJSONObject(index);
-			String key = quoteData.getString("MarketName");
+			String key = quoteData.getString("symbol");
 			BtceQuote quote = new BtceQuote();
 			quote.setCurrencyPair(key);
 			quote.setData(quoteData);
