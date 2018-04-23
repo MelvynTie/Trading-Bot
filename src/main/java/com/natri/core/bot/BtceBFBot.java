@@ -80,7 +80,7 @@ public class BtceBFBot {
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run(){ System.out.println("Exit");}});
 
-		props.load(new FileInputStream(new File("/home/melvyn/Desktop/bot/res/log4j.properties")));
+		props.load(new FileInputStream(new File("./res/log4j.properties")));
 		PropertyConfigurator.configure(props);
 		logger.info("Starting bot...");
 
