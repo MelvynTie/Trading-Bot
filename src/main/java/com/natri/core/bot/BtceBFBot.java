@@ -25,6 +25,7 @@ import com.natri.data.btce.BtceCurrencyProps;
 import com.natri.data.btce.BtceQuotePuller;
 import com.natri.trading.btce.BtceMultiStepTradeExecutor;
 import com.natri.trading.btce.MultiStepCurrencyTrade;
+import com.natri.trading.btce.BinanceApi;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Logger;
@@ -36,7 +37,7 @@ public class BtceBFBot {
 	public static final Properties props = new Properties();
 
 	public CurrencyCycle runAlgo() throws Exception, MalformedURLException{
-		String allPairsUrl = "https://bittrex.com/api/v1.1/public/getmarketsummaries";
+		String allPairsUrl = "https://api.binance.com//api/v1/ticker/24hr";
 
 		//BTC, ETH, LTC
 		String [] pairsInMaster = {"USDT-BTC","BTC-ETH", "BTC-LTC","ETH-LTC"};
@@ -82,6 +83,8 @@ public class BtceBFBot {
 
 		props.load(new FileInputStream(new File("./res/log4j.properties")));
 		PropertyConfigurator.configure(props);
+        // Input api keys here
+        BinanceApi.start("", "");
 		logger.info("Starting bot...");
 
 		while(true) {

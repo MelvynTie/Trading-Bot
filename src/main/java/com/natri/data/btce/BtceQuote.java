@@ -31,13 +31,13 @@ public class BtceQuote implements IQuoteDataContainer {
 	public void setCurrencyPair(String pair) {
 		this.pair = pair;
 
-		String pattern = "([A-Z0-9]*)-([A-Z0-9]*)";
+		String pattern = "(.*)(BTC|ETH|USDT|BNB)";
 		Pattern re = Pattern.compile(pattern);
 		Matcher matches = re.matcher(pair);
 
 		if(matches.find()){
-			this.end = matches.group(1);
-			this.start = matches.group(2);
+			this.end = matches.group(2);
+			this.start = matches.group(1);
 		}
 		else
 		{
@@ -52,10 +52,10 @@ public class BtceQuote implements IQuoteDataContainer {
 	@Override
 	public void setData(JSONObject jsonData) throws Exception{
 		this.data = jsonData;
-		this.ask = jsonData.getDouble("Ask");
-		this.bid = jsonData.getDouble("Bid");
-		this.last = jsonData.getDouble("Last");
-		String tm = jsonData.getString("TimeStamp");
+		this.ask = jsonData.getDouble("askPrice");
+		this.bid = jsonData.getDouble("bidPrice");
+		this.last = jsonData.getDouble("lastPrice");
+		String tm = jsonData.getString("closeTime");
 		String ts = tm.replaceAll("[^a-z0-9A-Z]","");
 		ts = ts.replaceAll("T","");
 		this.timestamp = Long.parseLong(ts);

@@ -1,3 +1,3 @@
 #!/bin/bash
 mvn package
-java -cp .:target/bot-1.0-SNAPSHOT.jar:lib/apache-logging-log4j.jar:lib/org.json.jar com.natri.core.bot.BtceBFBot
+java -cp .:target/bot-1.0-SNAPSHOT.jar:lib/* com.natri.core.bot.BtceBFBot
