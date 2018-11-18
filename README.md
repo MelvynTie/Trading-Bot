@@ -21,7 +21,7 @@ Follows the installation instructions from this website
 ```
 http://maven.apache.org/download.cgi#Installation
 ```
-## Compile the program
+## Compile the program 
 ```
 cd to the root directory of the program
 mvn compile
